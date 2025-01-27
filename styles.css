@@ -1,0 +1,398 @@
+/* Light Mode (Mặc định) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Màu nền nhạt */
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-image: url('img/header-bg.jpg'); /* Hình ảnh nền header */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+}
+
+header p {
+    font-size: 1.5em; /* Tăng kích thước font chữ */
+    font-weight: bold; /* Chữ đậm */
+    color: #FFFFFF; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Đổ bóng chữ */
+    margin-top: 10px; /* Khoảng cách với phần tử phía trên */
+    animation: glow 2s infinite alternate; /* Hiệu ứng phát sáng */
+}
+
+/* Hiệu ứng phát sáng */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+    }
+    to {
+        text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+    }
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1); /* Lớp phủ màu đen để làm nổi bật chữ */
+    z-index: 1;
+}
+
+header h1, header .avatar {
+    position: relative;
+    z-index: 2;
+}
+
+.avatar img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.5s ease;
+}
+
+.avatar img:hover {
+    transform: rotate(360deg); /* Xoay 360 độ */
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background: #f4f4f4;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #007bff; /* Màu xanh dương */
+    text-decoration: underline;
+}
+
+button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    background: linear-gradient(45deg, #007bff, #00bfff); /* Gradient xanh dương */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #00bfff, #007bff); /* Đảo ngược gradient */
+    transform: scale(1.05);
+}
+
+button#scrollButton {
+    bottom: 80px;
+}
+
+button#toggleDarkMode {
+    bottom: 140px;
+}
+
+button#contactMe {
+    bottom: 200px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212; /* Màu nền đen tối */
+    color: #e0e0e0; /* Màu chữ sáng */
+}
+
+body.dark-mode header {
+    background-image: url('img/header-bg-dark.jpg'); /* Hình ảnh nền header cho Dark Mode */
+}
+
+body.dark-mode header::before {
+    background: rgba(0, 0, 0, 0.7); /* Lớp phủ tối hơn cho Dark Mode */
+}
+
+body.dark-mode section {
+    background-color: #1f1f1f;
+    border: 1px solid #333; /* Viền nhẹ */
+}
+
+body.dark-mode h2 {
+    color: #ffffff; /* Tiêu đề màu trắng */
+}
+
+body.dark-mode ul li {
+    background: #333; /* Nền các mục trong ul tối hơn */
+    color: #ffffff; /* Chữ màu trắng */
+}
+
+body.dark-mode a {
+    color: #ffffff; /* Liên kết màu trắng */
+}
+
+body.dark-mode button {
+    background: linear-gradient(45deg, #0d6efd, #007bff); /* Gradient xanh dương nhạt hơn */
+}
+
+/* Icon địa điểm */
+.icon {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* Hình ảnh mạng xã hội */
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.social-links img {
+    width: 40px; /* Kích thước cố định */
+    height: 40px; /* Kích thước cố định */
+    transition: transform 0.3s;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+}
+
+.social-links img:hover {
+    transform: scale(1.1); /* Hiệu ứng phóng to nhẹ khi hover */
+}
+
+/* Hình ảnh thành tích và dự án */
+.achievement img, .project img {
+    width: 150px; /* Kích thước cố định */
+    height: 150px; /* Kích thước cố định */
+    border-radius: 10px;
+    margin-right: 20px;
+    object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
+}
+
+.achievement, .project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement:hover, .project:hover {
+    transform: translateY(-5px); /* Nổi lên nhẹ */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
+    .avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .achievement, .project {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .achievement img, .project img {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    .social-links img {
+        width: 30px;
+        height: 30px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    button#scrollButton {
+        bottom: 70px;
+    }
+
+    button#toggleDarkMode {
+        bottom: 130px;
+    }
+
+    button#contactMe {
+        bottom: 190px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    .achievement-details h3, .project-details h3 {
+        font-size: 18px;
+    }
+
+    .achievement-details p, .project-details p {
+        font-size: 14px;
+    }
+
+    .social-links img {
+        width: 25px;
+        height: 25px;
+    }
+
+    button {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    button#scrollButton {
+        bottom: 60px;
+    }
+
+    button#toggleDarkMode {
+        bottom: 120px;
+    }
+
+    button#contactMe {
+        bottom: 180px;
+    }
+}
+
+/* Công nghệ và Học tập */
+#tech-stack {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tech-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.tech-item span {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode #tech-stack {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .tech-item {
+    background-color: #333;
+}
+
+body.dark-mode .tech-item span {
+    color: #e0e0e0;
+}
+
+.more-projects {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.highlight {
+    color: #007BFF; /* Màu xanh dương */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.highlight:hover {
+    color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+    transform: scale(1.1); /* Phóng to chữ khi hover */
+    text-decoration: underline; /* Gạch chân khi hover */
+}
