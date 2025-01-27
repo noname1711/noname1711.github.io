@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Màu nền nhạt */
+    background-color: #f8f9fa; 
     color: #333;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -12,7 +12,7 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-image: url('img/header-bg.jpg'); /* Hình ảnh nền header */
+    background-image: url('img/header-bg.jpg'); 
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -20,8 +20,8 @@ header {
 }
 
 header p {
-    font-size: 1.5em; /* Tăng kích thước font chữ */
-    font-weight: bold; /* Chữ đậm */
+    font-size: 1.5em; 
+    font-weight: bold; 
     color: #FFFFFF; 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Đổ bóng chữ */
     margin-top: 10px; /* Khoảng cách với phần tử phía trên */
@@ -106,7 +106,7 @@ a {
 }
 
 a:hover {
-    color: #007bff; /* Màu xanh dương */
+    color: #007bff; 
     text-decoration: underline;
 }
 
@@ -115,7 +115,7 @@ button {
     bottom: 20px;
     right: 20px;
     padding: 10px;
-    background: linear-gradient(45deg, #007bff, #00bfff); /* Gradient xanh dương */
+    background: linear-gradient(45deg, #007bff, #00bfff); /* Gradient */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -142,12 +142,12 @@ button#contactMe {
 
 /* Dark Mode */
 body.dark-mode {
-    background-color: #121212; /* Màu nền đen tối */
-    color: #e0e0e0; /* Màu chữ sáng */
+    background-color: #121212; 
+    color: #e0e0e0; 
 }
 
 body.dark-mode header {
-    background-image: url('img/header-bg-dark.jpg'); /* Hình ảnh nền header cho Dark Mode */
+    background-image: url('img/header-bg-dark.jpg'); 
 }
 
 body.dark-mode header::before {
@@ -160,16 +160,16 @@ body.dark-mode section {
 }
 
 body.dark-mode h2 {
-    color: #ffffff; /* Tiêu đề màu trắng */
+    color: #ffffff; 
 }
 
 body.dark-mode ul li {
     background: #333; /* Nền các mục trong ul tối hơn */
-    color: #ffffff; /* Chữ màu trắng */
+    color: #ffffff; 
 }
 
 body.dark-mode a {
-    color: #ffffff; /* Liên kết màu trắng */
+    color: #ffffff; 
 }
 
 body.dark-mode button {
@@ -190,8 +190,8 @@ body.dark-mode button {
 }
 
 .social-links img {
-    width: 40px; /* Kích thước cố định */
-    height: 40px; /* Kích thước cố định */
+    width: 40px; 
+    height: 40px; 
     transition: transform 0.3s;
     object-fit: cover; /* Đảm bảo hình ảnh không bị méo */
 }
@@ -385,14 +385,14 @@ body.dark-mode .tech-item span {
 }
 
 .highlight {
-    color: #007BFF; /* Màu xanh dương */
+    color: #007BFF; 
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .highlight:hover {
-    color: #0056b3; /* Màu xanh dương đậm hơn khi hover */
+    color: #0056b3; /* Màu đậm hơn khi hover */
     transform: scale(1.1); /* Phóng to chữ khi hover */
     text-decoration: underline; /* Gạch chân khi hover */
 }
