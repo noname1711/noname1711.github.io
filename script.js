@@ -64,3 +64,18 @@ function checkVisibility() {
 
 window.addEventListener('scroll', checkVisibility);
 window.addEventListener('load', checkVisibility);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const avatar = document.querySelector('.avatar');
+    const audio = document.getElementById('avatarAudio');
+
+    avatar.addEventListener('mouseenter', function() {
+        audio.play(); // Phát nhạc khi di chuột vào avatar
+    });
+
+    avatar.addEventListener('mouseleave', function() {
+        audio.pause(); // Dừng phát nhạc khi di chuột ra khỏi avatar
+        audio.currentTime = 0; // Đặt lại thời gian phát về 0 để lần sau phát lại từ đầu
+    });
+});
